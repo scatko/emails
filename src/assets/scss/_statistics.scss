@@ -241,7 +241,7 @@ table.button {
     margin-bottom: 8px;
 
     @media only screen and (max-width: $local-mobile) {
-      display: inline-block;
+      float: left;
       max-width: 48px;
     }
   }
@@ -253,7 +253,8 @@ table.button {
     line-height: 1.5;
 
     @media only screen and (max-width: $local-mobile) {
-      display: inline-block;
+      float: left;
+      padding-left: 16px;
     }
   }
 
@@ -294,6 +295,12 @@ table.button {
 
   &__img {
     max-width: 170px;
+  }
+
+  &__text-block {
+    @media only screen and (max-width: $local-mobile) {
+      padding: 0 16px !important;
+    }
   }
 
   .h3 {
