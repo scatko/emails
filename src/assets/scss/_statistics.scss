@@ -203,8 +203,8 @@ table.button {
 }
 
 .tiles-item {
-  display: inline-block;
   padding: 8px;
+  float: left;
 
   @media only screen and (max-width: $local-mobile) {
     width: 100%;
@@ -258,63 +258,19 @@ table.button {
   }
 
   &__but {
-    width: 100% !important;
+    display: block;
+    width: 100%;
     height: 32px;
     white-space: nowrap;
-    padding: 0 4px;
-
-    table {
-      width: 100%;
-
-      td {
-        height: 32px;
-        padding: 4px 0;
-        border-radius: 3px !important;
-        border: 1px solid #7ab447 !important;
-        background: none !important;
-        background-color: none !important;
-        color: #77b242 !important;
-        font-size: 16px;
-        font-weight: bold;
-        line-height: 1.5;
-        text-align: center !important;
-      }
-    }
-  }
-}
-
-.tile-item {
-  display: inline-block;
-  width: 182px !important;
-  height: 182px !important;
-  padding: 16px;
-
-  &__icon {
-    height: 40px;
-  }
-
-  &__value {
+    padding: 4px 0;
+    border-radius: 3px !important;
+    border: 1px solid #7ab447 !important;
+    background: none !important;
+    background-color: none !important;
+    color: #77b242 !important;
     font-size: 16px;
-    font-weight: bold;
     line-height: 1.5;
-  }
-
-  &__but {
-    width: 150px !important;
-    height: 32px;
-    white-space: nowrap;
-    padding: 0 4px;
-
-    table td {
-      height: 32px;
-      border-radius: 3px !important;
-      border: 1px solid #7ab447 !important;
-      background: none !important;
-      background-color: none !important;
-      color: #77b242 !important;
-      font-size: 16px;
-      line-height: 1.5;
-    }
+    text-align: center !important;
   }
 }
 
