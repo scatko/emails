@@ -50,6 +50,10 @@ th.last {
 table.button {
   margin: 0;
   margin: 0;
+
+  table td a {
+    padding: 0;
+  }
 }
 
 // styles
@@ -168,19 +172,20 @@ table.button {
 // end old
 
 .but {
+  display: inline-block;
   border-radius: 3px;
+  border: none;
+  background: #1976d2;
   background-color: #1976d2;
+  color: #fefefe;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.75;
+  padding: 8px 30px;
+  text-align: center;
 
-  table td {
-    border-radius: 3px !important;
-    border: none !important;
-    background: #1976d2 !important;
-    background-color: #1976d2 !important;
-    color: #fefefe !important;
-    font-size: 16px;
-    font-weight: bold;
-    line-height: 1.75;
-    padding: 8px 30px;
+  @media only screen and (max-width: $local-mobile) {
+    display: block;
   }
 }
 
@@ -291,20 +296,32 @@ table.button {
 
   &__img-wrapper {
     vertical-align: bottom;
+    text-align: center;
   }
 
   &__img {
     max-width: 170px;
+    padding-right: 10px;
+
+    @media only screen and (max-width: $local-mobile) {
+      margin: auto;
+      padding-top: 24px;
+    }
   }
 
-  &__text-block {
+  &__text-block-content {
     @media only screen and (max-width: $local-mobile) {
       padding: 0 16px !important;
     }
   }
 
   .h3 {
+    padding-top: 24px;
     color: #112d48;
+
+    @media only screen and (max-width: $local-mobile) {
+      line-height: 1.33;
+    }
   }
 
   &__text {
