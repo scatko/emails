@@ -3,347 +3,275 @@ subject: Статистика за неделю
 ---
 
 <container>
-  <row>
-    <columns class="stat-container">
-      <spacer size="32"></spacer>
-      <a href="https://www.ucheba.ru/" target="_blank">
-        <img class="header-logo"
-          src="https://www.ucheba.ru/img/logo-ucheba-blue.png"
-          alt="логотип Учеба.ру">
-      </a>
-      <spacer size="32"></spacer>
-      <p class="dates">с 25 по 31 мая</p>
-      <spacer size="2"></spacer>
-      <h1 class="h1">Статистика за неделю</h1>
-      <spacer size="33"></spacer>
-    </columns>
-  </row>
+  <wrapper class="stats-wrapper">
+    <row>
+      <columns class="stat-container">
+        <spacer size="32"></spacer>
+        <a href="https://www.ucheba.ru/" target="_blank">
+          <img class="header-logo"
+            src="https://www.ucheba.ru/img/logo-ucheba-blue.png"
+            alt="логотип Учеба.ру">
+        </a>
+        <spacer size="32"></spacer>
+        <p class="dates">с 25 по 31 мая</p>
+        <spacer size="2"></spacer>
+        <h1 class="h1">Статистика за неделю</h1>
+        <spacer size="33"></spacer>
+      </columns>
+    </row>
 
-  <!-- Статистика -->
-  <row>
+    <!-- Статистика div -->
+    <div class="stats">
 
-    <columns small="6" large="4" class="stat-item">
-      <row>
-        <columns>
-          <img class="arrow"
+      <div class="stats-item">
+        <div class="stats-item__grow">
+          <img class="stats-item__arrow"
             src="https://ucheba.ru/pix/upload/default/green-arrow_(1).svg"
             alt="логотип Учеба.ру">
-        </columns>
-        <columns>
-          <p class="arrow-value arrow-value_green">(+4)</p>
-        </columns>
-      </row>
-      <row>
-        <columns>
-          <p class="stat-item__value">
-            3 600
-          </p>
-        </columns>
-      </row>
-      <row>
-        <columns>
-          <p class="stat-item__desc">
-            показов в результатах<br>поиска
-          </p>
-        </columns>
-      </row>
-    </columns>
+          <div class="stats-item__grow-value stats-item__grow-value_green">(+4)</div>
+        </div>
+        <div class="stats-item__value">3 600</div>
+        <div class="stats-item__desc">показов в результатах<br>поиска</div>
+      </div>
 
-    <columns small="6" large="4" class="stat-item">
-      <row>
-        <columns>
-          <img class="arrow"
+      <div class="stats-item">
+        <div class="stats-item__grow">
+          <img class="stats-item__arrow"
             src="https://ucheba.ru/pix/upload/default/red-arrow_(1).svg"
             alt="логотип Учеба.ру">
-        </columns>
-        <columns>
-          <p class="arrow-value arrow-value_red">(-2)</p>
-        </columns>
-      </row>
-      <row>
-        <columns>
-          <p class="stat-item__value">
-            1 240
-          </p>
-        </columns>
-      </row>
-      <row>
-        <columns>
-          <p class="stat-item__desc">
-            просмотров ваших страниц
-          </p>
-        </columns>
-      </row>
-    </columns>
+          <div class="stats-item__grow-value stats-item__grow-value_red">(-2)</div>
+        </div>
+        <div class="stats-item__value">1 240</div>
+        <div class="stats-item__desc">просмотров ваших страниц</div>
+      </div>
 
-    <columns small="6" large="4" class="stat-item">
-      <row>
-        <columns>
-          <img class="arrow"
+      <div class="stats-item">
+        <div class="stats-item__grow">
+          <img class="stats-item__arrow"
             src="https://ucheba.ru/pix/upload/default/red-arrow_(1).svg"
             alt="логотип Учеба.ру">
-        </columns>
-        <columns>
-          <p class="arrow-value arrow-value_red">(-2)</p>
-        </columns>
-      </row>
-      <row>
-        <columns>
-          <p class="stat-item__value">
-            72
-          </p>
-        </columns>
-      </row>
-      <row>
-        <columns>
-          <p class="stat-item__desc">
-            заявки на курсы
-          </p>
-        </columns>
-      </row>
-    </columns>
+          <div class="stats-item__grow-value stats-item__grow-value_red">(-2)</div>
+        </div>
+        <div class="stats-item__value">72</div>
+        <div class="stats-item__desc">заявки на курсы</div>
+      </div>
 
-    <columns small="6" large="4" class="stat-item">
-      <row>
-        <columns>
-          <img class="arrow"
+      <div class="stats-item">
+        <div class="stats-item__grow">
+          <img class="stats-item__arrow"
             src="https://ucheba.ru/pix/upload/default/green-arrow_(1).svg"
             alt="логотип Учеба.ру">
-        </columns>
-        <columns>
-          <p class="arrow-value arrow-value_green">(+5)</p>
-        </columns>
-      </row>
-      <row>
-        <columns>
-          <p class="stat-item__value">
-            86
-          </p>
-        </columns>
-      </row>
-      <row>
-        <columns>
-          <p class="stat-item__desc">
-            новых вопросов
-          </p>
-        </columns>
-      </row>
-    </columns>
+          <div class="stats-item__grow-value stats-item__grow-value_green">(+5)</div>
+        </div>
+        <div class="stats-item__value">86</div>
+        <div class="stats-item__desc">новых вопросов</div>
+      </div>
 
-    <columns small="6" large="4" class="stat-item">
-      <row>
-        <columns>
-          <img class="arrow"
+      <div class="stats-item">
+        <div class="stats-item__grow">
+          <img class="stats-item__arrow"
             src="https://ucheba.ru/pix/upload/default/red-arrow_(1).svg"
             alt="логотип Учеба.ру">
-        </columns>
-        <columns>
-          <p class="arrow-value arrow-value_red">(-2)</p>
-        </columns>
-      </row>
-      <row>
-        <columns>
-          <p class="stat-item__value">
-            95
-          </p>
-        </columns>
-      </row>
-      <row>
-        <columns>
-          <p class="stat-item__desc">
-            абитуриентов планируют<br>поступать
-          </p>
-        </columns>
-      </row>
-    </columns>
+          <div class="stats-item__grow-value stats-item__grow-value_red">(-2)</div>
+        </div>
+        <div class="stats-item__value">95</div>
+        <div class="stats-item__desc">абитуриентов планируют<br>поступать</div>
+      </div>
 
-  </row>
+    </div>
 
-  <!-- кнопка -->
-  <row>
-    <columns>
-      <spacer size="41"></spacer>
-      <button class="but">Подробная статистика</button>
-      <spacer size="48"></spacer>
-    </columns>
-  </row>
+    <!-- кнопка -->
+    <row>
+      <columns>
+        <spacer size="41"></spacer>
+        <button class="but">Подробная статистика</button>
+        <spacer size="48"></spacer>
+      </columns>
+    </row>
 
-  <!-- заголовок -->
-  <row>
-    <columns>
-      <h2 class="h2">Изменения за прошедшую неделю:</h2>
-      <spacer size="32"></spacer>
-    </columns>
-  </row>
+    <!-- заголовок -->
+    <row>
+      <columns>
+        <h2 class="h2">Изменения за прошедшую неделю:</h2>
+        <spacer size="32"></spacer>
+      </columns>
+    </row>
 
-  <!-- плитки -->
-  <row>
+    <!-- плитки div -->
+    <div class="tiles">
 
-    <columns small="12" large="4" class="tile-item tile-item_green">
-      <wrapper class="tile-item tile-item_green">
-        <img class="tile-item__icon"
-          src="https://ucheba.ru/pix/upload/default/watermelon.png"
-          alt="арбуз">
-        <p class="tile-item__value">+12 новых<br>программ</p>
-        <button class="tile-item__but">
-          Добавить ещё
-        </button>
-      </wrapper>
-    </columns>
+      <div class="tiles-item">
+        <div class="tiles-item__wrapper tiles-item__wrapper_green">
+          <img class="tiles-item__icon"
+            src="https://ucheba.ru/pix/upload/default/watermelon.png"
+            alt="арбуз">
+          <div class="tiles-item__value">+12 новых<br>программ</div>
+          <button class="tiles-item__but">
+            Добавить ещё
+          </button>
+        </div>
+      </div>
 
-    <columns small="12" large="4" class="tile-item tile-item_green">
-      <img class="tile-item__icon"
-        src="https://ucheba.ru/pix/upload/default/thumbs-up.png"
-        alt="арбуз">
-      <p class="tile-item__value">+3 новости<br>и мероприятия</p>
-      <button class="tile-item__but">
-        Добавить ещё
-      </button>
-    </columns>
+      <div class="tiles-item tiles-item_green">
+        <div class="tiles-item__wrapper tiles-item__wrapper_green">
+          <img class="tiles-item__icon"
+            src="https://ucheba.ru/pix/upload/default/thumbs-up.png"
+            alt="арбуз">
+          <div class="tiles-item__value">+3 новости<br>и мероприятия</div>
+          <button class="tiles-item__but">
+            Добавить ещё
+          </button>
+        </div>
+      </div>
 
-    <columns small="12" large="4" class="tile-item tile-item_green">
-      <img class="tile-item__icon"
-        src="https://ucheba.ru/pix/upload/default/camera-with-flash.png"
-        alt="арбуз">
-      <p class="tile-item__value">+2 фото<br>и видео</p>
-      <button class="tile-item__but">
-        Добавить ещё
-      </button>
-    </columns>
+      <div class="tiles-item tiles-item_green">
+        <div class="tiles-item__wrapper tiles-item__wrapper_green">
+          <img class="tiles-item__icon"
+            src="https://ucheba.ru/pix/upload/default/camera-with-flash.png"
+            alt="арбуз">
+          <div class="tiles-item__value">+2 фото<br>и видео</div>
+          <button class="tiles-item__but">
+            Добавить ещё
+          </button>
+        </div>
+      </div>
 
-  </row>
+      <div class="tiles-item tiles-item_green">
+        <div class="tiles-item__wrapper tiles-item__wrapper_green">
+          <img class="tiles-item__icon"
+            src="https://ucheba.ru/pix/upload/default/scientist.png"
+            alt="арбуз">
+          <div class="tiles-item__value">+5 новых<br>преподавателей</div>
+          <button class="tiles-item__but">
+            Добавить ещё
+          </button>
+        </div>
+      </div>
 
-  <row>
+      <div class="tiles-item tiles-item_gray">
+        <div class="tiles-item__wrapper tiles-item__wrapper_gray">
+          <img class="tiles-item__icon"
+            src="https://ucheba.ru/pix/upload/default/loundly-crying-face.png"
+            alt="арбуз">
+          <div class="tiles-item__value">Не загружено<br>фото и видео </div>
+          <button class="tiles-item__but">
+            Загрузить
+          </button>
+        </div>
+      </div>
 
-    <columns small="12" large="4" class="tile-item tile-item_green">
-      <img class="tile-item__icon"
-        src="https://ucheba.ru/pix/upload/default/scientist.png"
-        alt="арбуз">
-      <p class="tile-item__value">+5 новых<br>преподавателей</p>
-      <button class="tile-item__but">
-        Добавить ещё
-      </button>
-    </columns>
+      <div class="tiles-item tiles-item_red">
+        <div class="tiles-item__wrapper tiles-item__wrapper_red">
+          <img class="tiles-item__icon"
+            src="https://ucheba.ru/pix/upload/default/prohibited.png"
+            alt="арбуз">
+          <div class="tiles-item__value">5 программ<br>просрочено</div>
+          <button class="tiles-item__but">
+            Обновить даты
+          </button>
+        </div>
+      </div>
+    </div>
 
-    <columns small="12" large="4" class="tile-item tile-item_gray">
-      <img class="tile-item__icon"
-        src="https://ucheba.ru/pix/upload/default/loundly-crying-face.png"
-        alt="арбуз">
-      <p class="tile-item__value">Не загружено<br>фото и видео </p>
-      <button class="tile-item__but">
-        Добавить ещё
-      </button>
-    </columns>
+    <!-- эффективность -->
+    <row>
+      <columns>
+        <spacer size="48"></spacer>
+        <h2 class="h2">Хотите повысить эффективность?</h2>
+        <spacer size="24"></spacer>
+      </columns>
+    </row>
 
-    <columns small="12" large="4" class="tile-item tile-item_red">
-      <img class="tile-item__icon"
-        src="https://ucheba.ru/pix/upload/default/prohibited.png"
-        alt="арбуз">
-      <p class="tile-item__value">5 программ<br>просрочено</p>
-      <button class="tile-item__but">
-        Добавить ещё
-      </button>
-    </columns>
-  </row>
+    <row>
+      <columns large="4">
+        <row>
+          <columns>
+            <img class="arrow"
+              src="https://ucheba.ru/pix/upload/default/green-arrow_(1).svg"
+              alt="стрелка вверх">
+          </columns>
+        </row>
+        <row>
+          <columns>
+            <p class="stat-item__value">
+              1 560 647
+            </p>
+          </columns>
+        </row>
+        <row>
+          <columns>
+            <p class="stat-item__desc">
+              просмотров
+            </p>
+          </columns>
+        </row>
+      </columns>
 
-  <!-- эффективность -->
-  <row>
-    <columns>
-      <spacer size="48"></spacer>
-      <h2 class="h2">Хотите повысить эффективность?</h2>
-      <spacer size="24"></spacer>
-    </columns>
-  </row>
+      <columns large="4">
+        <row>
+          <columns>
+            <img class="arrow"
+              src="https://ucheba.ru/pix/upload/default/green-arrow_(1).svg"
+              alt="стрелка вверх">
+          </columns>
+        </row>
+        <row>
+          <columns>
+            <p class="stat-item__value">
+              12 480
+            </p>
+          </columns>
+        </row>
+        <row>
+          <columns>
+            <p class="stat-item__desc">
+              заявок на курсы
+            </p>
+          </columns>
+        </row>
+      </columns>
 
-  <row>
-    <columns large="4">
-      <row>
-        <columns>
-          <img class="arrow"
-            src="https://ucheba.ru/pix/upload/default/green-arrow_(1).svg"
-            alt="стрелка вверх">
-        </columns>
-      </row>
-      <row>
-        <columns>
-          <p class="stat-item__value">
-            1 560 647
-          </p>
-        </columns>
-      </row>
-      <row>
-        <columns>
-          <p class="stat-item__desc">
-            просмотров
-          </p>
-        </columns>
-      </row>
-    </columns>
+      <columns large="4">
+      </columns>
+    </row>
 
-    <columns large="4">
-      <row>
-        <columns>
-          <img class="arrow"
-            src="https://ucheba.ru/pix/upload/default/green-arrow_(1).svg"
-            alt="стрелка вверх">
-        </columns>
-      </row>
-      <row>
-        <columns>
-          <p class="stat-item__value">
-            12 480
-          </p>
-        </columns>
-      </row>
-      <row>
-        <columns>
-          <p class="stat-item__desc">
-            заявок на курсы
-          </p>
-        </columns>
-      </row>
-    </columns>
+    <row>
+      <columns>
+        <spacer size="24"></spacer>
+        <p class="text">Такую статистику  за эту неделю получиликлиенты, которые
+          воспользовались платными возможностями Учёбы.ру</p>
+        <spacer size="24"></spacer>
+        <p class="text">
+          Чтобы получать больше просмотров и заявок на обучение, а также получить доступ к контактам заинтересованных абитуриентов — воспользуйтесь нашими платными возможностями.
+        </p>
+        <spacer size="24"></spacer>
+      </columns>
+    </row>
 
-    <columns large="4">
-    </columns>
-  </row>
+    <!-- кнопка -->
+    <row>
+      <columns>
+        <button class="but">Подключить доступ</button>
+        <spacer size="24"></spacer>
+      </columns>
+    </row>
 
-  <row>
-    <columns>
-      <spacer size="24"></spacer>
-      <p class="text">Такую статистику  за эту неделю получиликлиенты, которые
-        воспользовались платными возможностями Учёбы.ру</p>
-      <spacer size="24"></spacer>
-      <p class="text">
-        Чтобы получать больше просмотров и заявок на обучение, а также получить доступ к контактам заинтересованных абитуриентов — воспользуйтесь нашими платными возможностями.
-      </p>
-      <spacer size="24"></spacer>
-    </columns>
-  </row>
-
-  <!-- кнопка -->
-  <row>
-    <columns>
-      <button class="but">Подключить доступ</button>
-      <spacer size="24"></spacer>
-    </columns>
-  </row>
-
-  <row>
-    <columns>
-      <p>Команда Учёбы.ру</p>
-      <spacer size="24"></spacer>
-    </columns>
-  </row>
+    <row>
+      <columns>
+        <p>Команда Учёбы.ру</p>
+        <spacer size="24"></spacer>
+      </columns>
+    </row>
+  </wrapper>
 
   <!-- футер -->
   <row class="footer">
-    <columns large="3">
-      <img class="header-logo"
+    <columns small="12" large="3" class="footer__img-wrapper">
+      <img class="footer__img"
         src="https://ucheba.ru/pix/upload/default/rock-hand.png"
         alt="логотип Учеба.ру">
     </columns>
-    <columns large="9">
+    <columns small="12" large="9">
       <spacer size="24"></spacer>
       <h3 class="h3">
         Будьте в списке самых актуальных

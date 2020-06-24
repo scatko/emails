@@ -1,4 +1,17 @@
 // resets
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
 p,
 h1,
 h2,
@@ -10,8 +23,28 @@ h6 {
   padding: 0;
 }
 
+$local-mobile: 596px;
+
+table.body .container {
+  @media only screen and (max-width: $local-mobile) {
+    width: 100% !important;
+  }
+}
+
+table.body .columns,
+table.body .column {
+  @media only screen and (max-width: $local-mobile) {
+    padding: 0 !important;
+  }
+}
+
 th.columns {
-  padding: 0;
+  padding: 0 !important;
+}
+
+th.first,
+th.last {
+  padding: 0 !important;
 }
 
 table.button {
@@ -20,6 +53,14 @@ table.button {
 }
 
 // styles
+.stats-wrapper .wrapper-inner {
+  padding: 0 30px;
+
+  @media only screen and (max-width: $local-mobile) {
+    padding: 0 16px;
+  }
+}
+
 .stat-container {
   padding: 30px;
 }
@@ -40,7 +81,58 @@ table.button {
   line-height: 1.38;
 }
 
+.stats {
+  @media only screen and (max-width: $local-mobile) {
+    margin-bottom: -16px;
+  }
+}
+
+.stats-item {
+  display: inline-block;
+  width: 182px;
+  vertical-align: top;
+
+  @media only screen and (max-width: $local-mobile) {
+    width: 49%;
+    padding-bottom: 16px;
+  }
+
+  &__arrow {
+    display: inline-block;
+    max-width: 13px;
+    padding-right: 4px;
+  }
+
+  &__grow-value {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.71;
+
+    &_green {
+      color: #77b242;
+    }
+
+    &_red {
+      color: #ee1616;
+    }
+  }
+
+  &__value {
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 1.25;
+  }
+
+  &__desc {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+}
+
+// old
 .arrow {
+  display: inline-block;
   max-width: 13px;
 }
 
@@ -59,6 +151,9 @@ table.button {
 }
 
 .stat-item {
+  display: inline-block;
+  width: 183px;
+
   &__value {
     font-size: 32px;
     font-weight: bold;
@@ -70,30 +165,121 @@ table.button {
     line-height: 1.5;
   }
 }
+// end old
 
 .but {
   border-radius: 3px;
   background-color: #1976d2;
-}
 
-table.button table td {
-  border-radius: 3px;
-  border: none;
-  background-color: #1976d2;
-  color: #fefefe;
-  font-size: 16px;
-  font-weight: bold;
-  line-height: 1.75;
-  padding: 8px 30px;
+  table td {
+    border-radius: 3px !important;
+    border: none !important;
+    background: #1976d2 !important;
+    background-color: #1976d2 !important;
+    color: #fefefe !important;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.75;
+    padding: 8px 30px;
+  }
 }
 
 .h2 {
   font-size: 24px;
   font-weight: bold;
   line-height: 1;
+
+  @media only screen and (max-width: $local-mobile) {
+    line-height: 1.33;
+  }
+}
+
+.tiles {
+  margin: -8px;
+
+  @media only screen and (max-width: $local-mobile) {
+    margin: 0 0 -16px;
+  }
+}
+
+.tiles-item {
+  display: inline-block;
+  padding: 8px;
+
+  @media only screen and (max-width: $local-mobile) {
+    width: 100%;
+    padding: 0;
+    padding-bottom: 16px;
+  }
+
+  &__wrapper {
+    width: 182px !important;
+    height: 182px !important;
+    padding: 16px;
+    border-radius: 4px;
+
+    @media only screen and (max-width: $local-mobile) {
+      width: 100% !important;
+      height: 128px !important;
+    }
+
+    &_green {
+      background-color: rgba(132, 226, 47, 0.3);
+    }
+
+    &_gray {
+      background-color: #ebedf0;
+    }
+
+    &_red {
+      background-color: rgba(238, 22, 22, 0.2);
+    }
+  }
+
+  &__icon {
+    height: 40px;
+    margin-bottom: 8px;
+
+    @media only screen and (max-width: $local-mobile) {
+      display: inline-block;
+      max-width: 48px;
+    }
+  }
+
+  &__value {
+    margin-bottom: 22px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.5;
+
+    @media only screen and (max-width: $local-mobile) {
+      display: inline-block;
+    }
+  }
+
+  &__but {
+    width: 150px !important;
+    height: 32px;
+    white-space: nowrap;
+    padding: 0 4px;
+
+    table td {
+      height: 32px;
+      border-radius: 3px !important;
+      border: 1px solid #7ab447 !important;
+      background: none !important;
+      background-color: none !important;
+      color: #77b242 !important;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+  }
 }
 
 .tile-item {
+  display: inline-block;
+  width: 182px !important;
+  height: 182px !important;
   padding: 16px;
 
   &__icon {
@@ -107,6 +293,21 @@ table.button table td {
   }
 
   &__but {
+    width: 150px !important;
+    height: 32px;
+    white-space: nowrap;
+    padding: 0 4px;
+
+    table td {
+      height: 32px;
+      border-radius: 3px !important;
+      border: 1px solid #7ab447 !important;
+      background: none !important;
+      background-color: none !important;
+      color: #77b242 !important;
+      font-size: 16px;
+      line-height: 1.5;
+    }
   }
 }
 
@@ -123,6 +324,14 @@ table.button table td {
 
 .footer {
   background-color: rgba(0, 153, 255, 0.2);
+
+  &__img-wrapper {
+    vertical-align: bottom;
+  }
+
+  &__img {
+    max-width: 170px;
+  }
 
   .h3 {
     color: #112d48;
