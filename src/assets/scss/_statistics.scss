@@ -258,20 +258,27 @@ table.button {
   }
 
   &__but {
-    width: 150px !important;
+    width: 100% !important;
     height: 32px;
     white-space: nowrap;
     padding: 0 4px;
 
-    table td {
-      height: 32px;
-      border-radius: 3px !important;
-      border: 1px solid #7ab447 !important;
-      background: none !important;
-      background-color: none !important;
-      color: #77b242 !important;
-      font-size: 16px;
-      line-height: 1.5;
+    table {
+      width: 100%;
+
+      td {
+        height: 32px;
+        padding: 4px 0;
+        border-radius: 3px !important;
+        border: 1px solid #7ab447 !important;
+        background: none !important;
+        background-color: none !important;
+        color: #77b242 !important;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 1.5;
+        text-align: center !important;
+      }
     }
   }
 }
