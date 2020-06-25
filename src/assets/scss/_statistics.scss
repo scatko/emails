@@ -190,6 +190,14 @@ table.button {
   }
 }
 
+.stat-but {
+  margin: 41px 0 48px;
+
+  @media only screen and (max-width: $local-mobile) {
+    margin: 32px 0 40px;
+  }
+}
+
 .h2 {
   font-size: 24px;
   font-weight: bold;
@@ -271,14 +279,42 @@ table.button {
     height: 32px;
     white-space: nowrap;
     padding: 4px 0;
-    border-radius: 3px !important;
-    border: 1px solid #7ab447 !important;
-    background: none !important;
-    background-color: none !important;
-    color: #77b242 !important;
+    border-radius: 3px;
+    border: 1px solid #7ab447;
+    background: none;
+    background-color: none;
+    color: #77b242;
     font-size: 16px;
     line-height: 1.5;
-    text-align: center !important;
+    text-align: center;
+
+    .tiles-item_gray & {
+      border: 1px solid #1976d2;
+      font-weight: bold;
+      color: #1976d2;
+    }
+
+    .tiles-item_red & {
+      border: 1px solid #ee1616;
+      font-weight: bold;
+      color: #ee1616;
+    }
+  }
+}
+
+.effect-h2 {
+  padding-top: 48px;
+
+  @media only screen and (max-width: $local-mobile) {
+    padding-top: 24px;
+  }
+}
+
+.signature {
+  padding: 24px 0;
+
+  @media only screen and (max-width: $local-mobile) {
+    padding: 32px 0;
   }
 }
 
