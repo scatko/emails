@@ -1,15 +1,10 @@
 // resets
-html {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
 *,
 *:before,
 *:after {
-  -webkit-box-sizing: inherit;
-  -moz-box-sizing: inherit;
-  box-sizing: inherit;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 p,
@@ -86,15 +81,15 @@ table.button {
 }
 
 .stats {
-  @media only screen and (max-width: $local-mobile) {
-    margin-bottom: -16px;
-  }
+  margin-bottom: -16px;
 }
 
 .stats-item {
-  display: inline-block;
   width: 182px;
+  height: 100px;
+  float: left;
   vertical-align: top;
+  margin-bottom: 16px;
 
   @media only screen and (max-width: $local-mobile) {
     width: 49%;
@@ -102,13 +97,15 @@ table.button {
   }
 
   &__arrow {
-    display: inline-block;
-    max-width: 13px;
+    display: block;
+    float: left;
+    max-width: 16px;
+    margin-top: 5px;
     padding-right: 4px;
   }
 
   &__grow-value {
-    display: inline-block;
+    float: left;
     font-size: 14px;
     font-weight: bold;
     line-height: 1.71;
@@ -191,10 +188,10 @@ table.button {
 }
 
 .stat-but {
-  margin: 41px 0 48px;
+  margin: 25px 0 48px;
 
   @media only screen and (max-width: $local-mobile) {
-    margin: 32px 0 40px;
+    margin: 16px 0 40px;
   }
 }
 
@@ -238,7 +235,7 @@ table.button {
     }
 
     &_green {
-      background-color: rgba(132, 226, 47, 0.3);
+      background-color: #d8f6c1;
     }
 
     &_gray {
@@ -246,7 +243,7 @@ table.button {
     }
 
     &_red {
-      background-color: rgba(238, 22, 22, 0.2);
+      background-color: #fbcfd0;
     }
   }
 
@@ -330,7 +327,7 @@ table.button {
 }
 
 .footer {
-  background-color: rgba(0, 153, 255, 0.2);
+  background-color: #cbeafe;
 
   &__img-wrapper {
     vertical-align: bottom;
