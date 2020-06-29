@@ -1,0 +1,378 @@
+---
+subject: Статистика за неделю
+---
+
+<?php
+/**
+ * @var Uz $uz
+ * @var bool $hasPackage
+ * @var bool $hasPersonalAssistant
+ * @var bool $hasMedia
+ * @var bool $hasTeachers
+ * @var \UzFullStatsByPeriod $prevStats
+ * @var \UzFullStatsByPeriod $currentStats
+ */
+?>
+
+<container>
+    <wrapper class="stats-wrapper">
+        <row>
+            <columns class="stat-container">
+                <spacer size="32"></spacer>
+                <a href="https://www.ucheba.ru/" target="_blank">
+                    <img class="header-logo"
+                         src="https://www.ucheba.ru/img/logo-ucheba-blue.png"
+                         alt="логотип Учеба.ру">
+                </a>
+                <spacer size="32"></spacer>
+                <p class="dates"><?= RussianTextUtils::getHumanFromToDates(Date::create($currentStats->getPeriodFrom()->getTimestamp()), Date::create($currentStats->getPeriodTo()->getTimestamp()))?></p>
+                <spacer size="2"></spacer>
+                <h1 class="h1">Статистика за неделю</h1>
+                <spacer size="33"></spacer>
+            </columns>
+        </row>
+
+        <!-- Статистика div -->
+        <div class="stats">
+            <div class="stats-item">
+                <? $diff = $currentStats->getInSearchShowsCount() - $prevStats->getInSearchShowsCount()?>
+                <? if ($diff > 0): ?>
+                    <img class="stats-item__arrow"
+                         src="https://ucheba.ru/pix/upload/default/green-arrow@3x.png"
+                         alt="">
+                <? else: ?>
+                    <img class="stats-item__arrow"
+                         src="https://ucheba.ru/pix/upload/default/red-arrow@3x.png"
+                         alt="">
+                <? endif; ?>
+                <div class="stats-item__grow-value <?= ($diff > 0 ? 'stats-item__grow-value_green' : 'stats-item__grow-value_red') ?>">(<?= ($diff > 0 ? "+" : "") . $diff?>)</div>
+                <div style="clear: both"></div>
+                <div class="stats-item__value"><?= TextUtils::numberFormat($currentStats->getInSearchShowsCount(), null, null, " ") ?></div>
+                <div class="stats-item__desc">показов в результатах<br>поиска</div>
+            </div>
+
+            <div class="stats-item">
+                <? $diff = $currentStats->getViewsCount() - $prevStats->getViewsCount()?>
+                <? if ($diff > 0): ?>
+                    <img class="stats-item__arrow"
+                         src="https://ucheba.ru/pix/upload/default/green-arrow@3x.png"
+                         alt="">
+                <? else: ?>
+                    <img class="stats-item__arrow"
+                         src="https://ucheba.ru/pix/upload/default/red-arrow@3x.png"
+                         alt="">
+                <? endif; ?>
+                <div class="stats-item__grow-value <?= ($diff > 0 ? 'stats-item__grow-value_green' : 'stats-item__grow-value_red') ?>">(<?= ($diff > 0 ? "+" : "") . $diff?>)</div>
+                <div style="clear: both"></div>
+                <div class="stats-item__value"><?= TextUtils::numberFormat($currentStats->getViewsCount(), null, null, " ")?></div>
+                <div class="stats-item__desc">просмотров ваших страниц</div>
+            </div>
+
+            <? if ($currentStats->getLearningRequestCourseCount() !== 0 || $prevStats->getLearningRequestCourseCount() !== 0): ?>
+                <div class="stats-item">
+                    <? $diff = $currentStats->getLearningRequestCourseCount() - $prevStats->getLearningRequestCourseCount()?>
+                    <? if ($diff > 0): ?>
+                        <img class="stats-item__arrow"
+                             src="https://ucheba.ru/pix/upload/default/green-arrow@3x.png"
+                             alt="">
+                    <? else: ?>
+                        <img class="stats-item__arrow"
+                             src="https://ucheba.ru/pix/upload/default/red-arrow@3x.png"
+                             alt="">
+                    <? endif; ?>
+                    <div class="stats-item__grow-value <?= ($diff > 0 ? 'stats-item__grow-value_green' : 'stats-item__grow-value_red') ?>">(<?= ($diff > 0 ? "+" : "") . $diff?>)</div>
+                    <div style="clear: both"></div>
+                    <div class="stats-item__value"><?= TextUtils::numberFormat($currentStats->getLearningRequestCourseCount(), null, null, " ")?></div>
+                    <div class="stats-item__desc">заявки на курсы</div>
+                </div>
+            <? endif; ?>
+
+            <? if ($hasPackage): ?>
+                <div class="stats-item">
+                    <? $diff = $currentStats->getQuestionsCount() - $prevStats->getQuestionsCount()?>
+                    <? if ($diff > 0): ?>
+                        <img class="stats-item__arrow"
+                             src="https://ucheba.ru/pix/upload/default/green-arrow@3x.png"
+                             alt="">
+                    <? else: ?>
+                        <img class="stats-item__arrow"
+                             src="https://ucheba.ru/pix/upload/default/red-arrow@3x.png"
+                             alt="">
+                    <? endif; ?>
+                    <div class="stats-item__grow-value <?= ($diff > 0 ? 'stats-item__grow-value_green' : 'stats-item__grow-value_red') ?>">(<?= ($diff > 0 ? "+" : "") . $diff?>)</div>
+                    <div style="clear: both"></div>
+                    <div class="stats-item__value"><?= TextUtils::numberFormat($currentStats->getQuestionsCount(), null, null, " ")?></div>
+                    <div class="stats-item__desc">новых вопросов</div>
+                </div>
+            <? endif; ?>
+
+            <? if ($hasPackage): ?>
+                <div class="stats-item">
+                    <? $diff = $currentStats->getOpinionsCount() - $prevStats->getOpinionsCount()?>
+                    <? if ($diff > 0): ?>
+                        <img class="stats-item__arrow"
+                             src="https://ucheba.ru/pix/upload/default/green-arrow@3x.png"
+                             alt="">
+                    <? else: ?>
+                        <img class="stats-item__arrow"
+                             src="https://ucheba.ru/pix/upload/default/red-arrow@3x.png"
+                             alt="">
+                    <? endif; ?>
+                    <div class="stats-item__grow-value <?= ($diff > 0 ? 'stats-item__grow-value_green' : 'stats-item__grow-value_red') ?>">(<?= ($diff > 0 ? "+" : "") . $diff?>)</div>
+                    <div style="clear: both"></div>
+                    <div class="stats-item__value"><?= TextUtils::numberFormat($currentStats->getOpinionsCount(), null, null, " ")?></div>
+                    <div class="stats-item__desc">новых отзывов о вас</div>
+                </div>
+            <? endif; ?>
+
+            <? if ($hasPackage && ($currentStats->getLearningRequestCourseCount() !== 0 || $prevStats->getLearningRequestCourseCount() !== 0)): ?>
+                <div class="stats-item">
+                    <img class="stats-item__arrow"
+                         src="https://ucheba.ru/pix/upload/default/red-arrow@3x.png"
+                         alt="">
+                    <? $diff = $currentStats->getLearningRequestAbiturientsCount() - $prevStats->getLearningRequestAbiturientsCount()?>
+                    <div class="stats-item__grow-value <?= ($diff > 0 ? 'stats-item__grow-value_green' : 'stats-item__grow-value_red') ?>">(<?= ($diff > 0 ? "+" : "") . $diff?>)</div>
+                    <div style="clear: both"></div>
+                    <div class="stats-item__value"><?= TextUtils::numberFormat($currentStats->getLearningRequestAbiturientsCount(), null, null, " ")?></div>
+                    <div class="stats-item__desc">абитуриентов планируют<br>поступать</div>
+                </div>
+            <? endif; ?>
+
+            <div style="clear: both"></div>
+
+        </div>
+
+        <!-- кнопка -->
+        <row>
+            <columns>
+                <a href="<?= DEFAULT_SCHEME . '://' . $uz->getRelatedDomain()->getUrl() . RouterRewrite::me()->assembly(['uz' => $uz->getId()], 'my_uz_stat')?>" class="but stat-but">Подробная статистика</a>
+            </columns>
+        </row>
+
+        <!-- заголовок -->
+        <row>
+            <columns>
+                <h2 class="h2">Изменения за прошедшую неделю:</h2>
+                <spacer size="32"></spacer>
+            </columns>
+        </row>
+
+        <!-- плитки div -->
+        <div class="tiles">
+
+            <? if ($currentStats->getNewProgramsCount() > 0): ?>
+                <div class="tiles-item">
+                    <div class="tiles-item__wrapper tiles-item__wrapper_green">
+                        <img class="tiles-item__icon"
+                             src="https://ucheba.ru/pix/upload/default/watermelon.png"
+                             alt="арбуз">
+                        <div class="tiles-item__value">+<?= $currentStats->getNewProgramsCount()?> новых<br>программ</div>
+                        <div style="clear: both"></div>
+                        <a href="<?= DEFAULT_SCHEME . '://' . $uz->getRelatedDomain()->getUrl() . RouterRewrite::me()->assembly(['parent' => $uz->getId()], 'my_uz_program') ?>" class="tiles-item__but">
+                            Добавить ещё
+                        </a>
+                    </div>
+                </div>
+            <? endif; ?>
+
+            <? if ($currentStats->getNewArticlesCount() > 0): ?>
+                <div class="tiles-item tiles-item_green">
+                    <div class="tiles-item__wrapper tiles-item__wrapper_green">
+                        <img class="tiles-item__icon"
+                             src="https://ucheba.ru/pix/upload/default/thumbs-up.png"
+                             alt="арбуз">
+                        <div class="tiles-item__value">+<?= $currentStats->getNewArticlesCount()?> новости<br>и мероприятия</div>
+                        <div style="clear: both"></div>
+                        <a href="<?= DEFAULT_SCHEME . '://' . $uz->getRelatedDomain()->getUrl() . RouterRewrite::me()->assembly(['parent' => $uz->getId()], 'my_uz_uz_article') ?>" class="tiles-item__but">
+                            Добавить ещё
+                        </a>
+                    </div>
+                </div>
+            <? endif; ?>
+
+            <? if ($currentStats->getNewMediaCount() > 0): ?>
+                <div class="tiles-item tiles-item_green">
+                    <div class="tiles-item__wrapper tiles-item__wrapper_green">
+                        <img class="tiles-item__icon"
+                             src="https://ucheba.ru/pix/upload/default/camera-with-flash.png"
+                             alt="арбуз">
+                        <div class="tiles-item__value">+<?= $currentStats->getNewMediaCount()?> фото<br>и видео</div>
+                        <div style="clear: both"></div>
+                        <a href="<?= DEFAULT_SCHEME . '://' . $uz->getRelatedDomain()->getUrl() . RouterRewrite::me()->assembly(['id' => $uz->getId()], 'my_uz_uz_edit') ?>" class="tiles-item__but">
+                            Добавить ещё
+                        </a>
+                    </div>
+                </div>
+            <? elseif (!$hasPersonalAssistant && !$hasMedia): ?>
+                <div class="tiles-item tiles-item_gray">
+                    <div class="tiles-item__wrapper tiles-item__wrapper_gray">
+                        <img class="tiles-item__icon"
+                             src="https://ucheba.ru/pix/upload/default/loundly-crying-face.png"
+                             alt="арбуз">
+                        <div class="tiles-item__value">Не загружено<br>фото и видео </div>
+                        <div style="clear: both"></div>
+                        <a href="<?= DEFAULT_SCHEME . '://' . $uz->getRelatedDomain()->getUrl() . RouterRewrite::me()->assembly(['id' => $uz->getId()], 'my_uz_uz_edit') ?>" class="tiles-item__but">
+                            Загрузить
+                        </a>
+                    </div>
+                </div>
+            <? endif; ?>
+
+            <? if (!$hasPersonalAssistant && $currentStats->getNewTeachersCount() > 0): ?>
+                <div class="tiles-item tiles-item_green">
+                    <div class="tiles-item__wrapper tiles-item__wrapper_green">
+                        <img class="tiles-item__icon"
+                             src="https://ucheba.ru/pix/upload/default/scientist.png"
+                             alt="арбуз">
+                        <div class="tiles-item__value">+<?= $currentStats->getNewTeachersCount()?> новых<br>преподавателей</div>
+                        <div style="clear: both"></div>
+                        <a href="<?= DEFAULT_SCHEME . '://' . $uz->getRelatedDomain()->getUrl() . RouterRewrite::me()->assembly(['id' => $uz->getId()], 'my_uz_uz_edit') ?>" class="tiles-item__but">
+                            Добавить ещё
+                        </a>
+                    </div>
+                </div>
+            <? elseif (!$hasPersonalAssistant && !$hasTeachers): ?>
+                <div class="tiles-item tiles-item_gray">
+                    <div class="tiles-item__wrapper tiles-item__wrapper_gray">
+                        <img class="tiles-item__icon"
+                             src="https://ucheba.ru/pix/upload/default/loundly-crying-face.png"
+                             alt="арбуз">
+                        <div class="tiles-item__value">Не добавлены<br>преподаватели </div>
+                        <div style="clear: both"></div>
+                        <a href="<?= DEFAULT_SCHEME . '://' . $uz->getRelatedDomain()->getUrl() . RouterRewrite::me()->assembly(['id' => $uz->getId()], 'my_uz_uz_edit') ?>" class="tiles-item__but">
+                            Добавить
+                        </a>
+                    </div>
+                </div>
+            <? endif; ?>
+
+            <? if (!$hasPersonalAssistant && $currentStats->getExpiredProgramsCount() > 0): ?>
+                <div class="tiles-item tiles-item_red">
+                    <div class="tiles-item__wrapper tiles-item__wrapper_red">
+                        <img class="tiles-item__icon"
+                             src="https://ucheba.ru/pix/upload/default/prohibited.png"
+                             alt="арбуз">
+                        <div class="tiles-item__value"><?= $currentStats->getExpiredProgramsCount()?> программ<br>просрочено</div>
+                        <div style="clear: both"></div>
+                        <a href="<?= DEFAULT_SCHEME . '://' . $uz->getRelatedDomain()->getUrl() . RouterRewrite::me()->assembly(['parent' => $uz->getId()], 'my_uz_program') ?>" class="tiles-item__but">
+                            Обновить даты
+                        </a>
+                    </div>
+                </div>
+            <? endif; ?>
+
+            <div style="clear: both"></div>
+        </div>
+
+        <!-- эффективность -->
+        <? if (!$hasPackage): ?>
+            <row>
+                <columns>
+                    <h2 class="h2 effect-h2">Хотите повысить эффективность?</h2>
+                    <spacer size="24"></spacer>
+                </columns>
+            </row>
+
+            <row>
+                <columns small="12" large="4">
+                    <row>
+                        <columns>
+                            <img class="arrow"
+                                 src="https://ucheba.ru/pix/upload/default/green-arrow@3x.png"
+                                 alt="">
+                        </columns>
+                    </row>
+                    <row>
+                        <columns>
+                            <p class="stat-item__value">
+                                1 560 647
+                            </p>
+                        </columns>
+                    </row>
+                    <row>
+                        <columns>
+                            <p class="stat-item__desc">
+                                просмотров
+                            </p>
+                        </columns>
+                    </row>
+                </columns>
+
+                <columns small="12" large="4">
+                    <row>
+                        <columns>
+                            <img class="arrow"
+                                 src="https://ucheba.ru/pix/upload/default/green-arrow@3x.png"
+                                 alt="">
+                        </columns>
+                    </row>
+                    <row>
+                        <columns>
+                            <p class="stat-item__value">
+                                12 480
+                            </p>
+                        </columns>
+                    </row>
+                    <row>
+                        <columns>
+                            <p class="stat-item__desc">
+                                заявок на курсы
+                            </p>
+                        </columns>
+                    </row>
+                </columns>
+
+                <columns large="4">
+                </columns>
+            </row>
+
+            <row>
+                <columns>
+                    <p class="text">Такую статистику  за эту неделю получиликлиенты, которые
+                        воспользовались платными возможностями Учёбы.ру</p>
+                    <spacer size="24"></spacer>
+                    <p class="text">
+                        Чтобы получать больше просмотров и заявок на обучение, а также получить доступ к контактам заинтересованных абитуриентов — воспользуйтесь нашими платными возможностями.
+                    </p>
+                    <spacer size="24"></spacer>
+                </columns>
+            </row>
+
+            <!-- кнопка -->
+            <row>
+                <columns>
+                    <a href="<?= DEFAULT_SCHEME . '://' . $uz->getRelatedDomain()->getUrl() . RouterRewrite::me()->assembly([],'forClientsAccess') ?>" class="but">Подключить доступ</a>
+                </columns>
+            </row>
+        <?endif;?>
+        <row>
+            <columns>
+                <p class="signature">Команда Учёбы.ру</p>
+            </columns>
+        </row>
+    </wrapper>
+
+    <!-- футер -->
+    <row class="footer">
+        <columns small="12" large="3" class="footer__img-wrapper">
+            <img class="footer__img"
+                 src="https://ucheba.ru/pix/upload/default/rock-hand@2x.png"
+                 alt="логотип Учеба.ру">
+        </columns>
+        <columns small="12" large="9" class="footer__text-block">
+            <div class="footer__text-block-content">
+                <h3 class="h3">
+                    Будьте в списке самых актуальных
+                </h3>
+                <spacer size="16"></spacer>
+                <p class="footer__text">
+                    Приглашаем вас принять участие в ежеквартальном обзоре самых актуальных
+                    программ по специальности Экономика.<br>
+                    Для подробной информации пишите на <a href="mailto:sales@ucheba.ru">sales@ucheba.ru</a> или вашему персональному менеджеру.
+                </p>
+                <spacer size="24"></spacer>
+            </div>
+        </columns>
+    </row>
+</container>
+

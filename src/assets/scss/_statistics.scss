@@ -18,7 +18,7 @@ h6 {
   padding: 0;
 }
 
-$local-mobile: 596px;
+$local-mobile: 640px; // 596px;
 
 table.body .container {
   @media only screen and (max-width: $local-mobile) {
@@ -91,10 +91,12 @@ table.button {
   vertical-align: top;
   margin-bottom: 16px;
 
+  /*
   @media only screen and (max-width: $local-mobile) {
     width: 49%;
     padding-bottom: 16px;
   }
+  */
 
   &__arrow {
     display: block;
@@ -182,17 +184,21 @@ table.button {
   padding: 8px 30px;
   text-align: center;
 
+  /*
   @media only screen and (max-width: $local-mobile) {
     display: block;
   }
+  */
 }
 
 .stat-but {
   margin: 25px 0 48px;
 
+  /*
   @media only screen and (max-width: $local-mobile) {
     margin: 16px 0 40px;
   }
+  */
 }
 
 .h2 {
@@ -200,28 +206,38 @@ table.button {
   font-weight: bold;
   line-height: 1;
 
+  /*
   @media only screen and (max-width: $local-mobile) {
     line-height: 1.33;
   }
+  */
 }
 
 .tiles {
-  margin: -8px;
+  // margin: -8px;
 
   @media only screen and (max-width: $local-mobile) {
-    margin: 0 0 -16px;
+    // margin: 0 0 -16px;
   }
 }
 
 .tiles-item {
-  padding: 8px;
+  // padding: 8px;
+  padding-right: 16px;
+  padding-bottom: 16px;
   float: left;
 
+  &:nth-child(3n) {
+    padding-right: 0;
+  }
+
+  /*
   @media only screen and (max-width: $local-mobile) {
     width: 100%;
     padding: 0;
     padding-bottom: 16px;
   }
+  */
 
   &__wrapper {
     width: 182px !important;
@@ -229,10 +245,12 @@ table.button {
     padding: 16px;
     border-radius: 4px;
 
+    /*
     @media only screen and (max-width: $local-mobile) {
       width: 100% !important;
       height: 128px !important;
     }
+    */
 
     &_green {
       background-color: #d8f6c1;
@@ -263,11 +281,13 @@ table.button {
     font-weight: bold;
     line-height: 1.5;
 
+    /*
     @media only screen and (max-width: $local-mobile) {
       float: left;
       margin-bottom: 16px;
       padding-left: 16px;
     }
+    */
   }
 
   &__but {
@@ -300,19 +320,25 @@ table.button {
 }
 
 .effect-h2 {
-  padding-top: 48px;
+  padding-top: 32px;
 
+  /*
   @media only screen and (max-width: $local-mobile) {
     padding-top: 24px;
   }
+  */
 }
 
 .signature {
   padding: 24px 0;
+  font-size: 14px;
+  line-height: 1.71;
 
+  /*
   @media only screen and (max-width: $local-mobile) {
     padding: 32px 0;
   }
+  */
 }
 
 .text {
@@ -338,25 +364,31 @@ table.button {
     max-width: 170px;
     padding-right: 10px;
 
+    /*
     @media only screen and (max-width: $local-mobile) {
       margin: auto;
       padding-top: 24px;
     }
+    */
   }
 
   &__text-block-content {
+    /*
     @media only screen and (max-width: $local-mobile) {
       padding: 0 16px !important;
     }
+    */
   }
 
   .h3 {
     padding-top: 24px;
     color: #112d48;
 
+    /*
     @media only screen and (max-width: $local-mobile) {
       line-height: 1.33;
     }
+    */
   }
 
   &__text {
